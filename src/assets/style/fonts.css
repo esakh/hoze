@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'IranianSans';
+    src: url('../fonts/iranSans/IranianSansRegular.ttf') format('truetype'),
+    url('../fonts/iranSans/IRANSans-web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/inter/Inter.ttf');
+    font-weight: normal;
+    font-style: normal;
+}

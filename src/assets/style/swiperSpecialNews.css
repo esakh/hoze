@@ -1,0 +1,29 @@
+.swiper-wrapper{
+    justify-content: space-between !important;
+}
+.swiper{
+    position: static;
+}
+.swiper-button-next{
+    position: absolute;
+    top: -9px !important;
+    left: 40px !important;
+    color: #292D32 !important;
+    transform: rotate(180deg) !important;
+    font-size: 2rem;
+}
+.swiper-button-next::after{
+    content: "\27A1" !important;
+}
+ .swiper-button-prev{
+     color: #292D32 !important;
+     direction: rtl;
+    position: absolute !important;
+    top:-10px !important;
+    left: 90px !important;
+    right: unset !important;
+     font-size: 2rem;
+}
+.swiper-button-prev::after{
+    content: "\27A1" !important;
+}
