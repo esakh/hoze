@@ -1,5 +1,9 @@
 <script setup>
 import {defineProps} from "vue";
+import {Swiper,SwiperSlide} from "swiper/vue";
+import "swiper/css"
+import {Autoplay } from "swiper/modules";
+import 'swiper/css/pagination'
 
 const props = defineProps(['educations'])
 
@@ -8,37 +12,70 @@ const props = defineProps(['educations'])
 <template>
   <div class=" container ">
     <div class="row">
-      <div class="col-md-4" v-for="edu in props.educations" :key="edu">
-        <div class="card border-0">
-          <div class="card-header bg-white border-0 p-0">
-            <router-link to="">
-                <img src="@/assets/icon/education/camera.png" class="card-img-top" alt="">
-            </router-link>
-          </div>
-          <div class="card-body">
-            <div class="full-date mb-2"><span>{{ edu.time }}</span></div>
-            <router-link to="" class="content text-decoration-none">
-              <h2 class="content-title card-title">{{ edu.title }}</h2>
-              <p class="content-text">{{ edu.text }}</p>
-            </router-link>
-          </div>
-          <div class="card-footer bg-white border-0 d-flex flex-row-reverse justify-content-between">
-            <div class="more"><router-link to="">{{ edu.more }}</router-link></div>
-            <ul class="see list-unstyled d-flex align-items-baseline p-0">
-              <li class="icon mx-1"><img src="@/assets/icon/education/eye.png" alt=""></li>
-              <li class="numbers mx-1">{{ edu.number }}</li>
-              <li class="text mx-1">{{ edu.see }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <swiper
+          :slides-per-view="1"
+      :space-between="30"
+
+      :autoplay="{
+        delay:4000
+      }"
+      :pagination="{
+        clickable:true
+      }"
+      :modules="[Autoplay ]"
+      :breakpoints="{
+        '1200':{
+          spaceBetween:30,
+          slidesPerView:3
+        },
+               '768.1':{
+          spaceBetween:30,
+          slidesPerView:2
+        }
+}"
+      >
+        <swiperSlide v-for="edu in props.educations" :key="edu">
+<!--          <div class="col-md-4" >-->
+            <div class="card border-0">
+              <div class="card-header bg-white border-0 p-0">
+                <router-link to="">
+                  <figure>
+                    <img src="@/assets/icon/education/camera.png" class="card-img-top" alt="">
+                  </figure>
+                </router-link>
+              </div>
+              <div class="card-body">
+                <div class="full-date mb-2"><span>{{ edu.time }}</span></div>
+                <router-link to="" class="content text-decoration-none">
+                  <h2 class="content-title card-title">{{ edu.title }}</h2>
+                  <p class="content-text">{{ edu.text }}</p>
+                </router-link>
+              </div>
+              <div class="card-footer bg-white border-0 d-flex flex-row-reverse justify-content-between">
+                <div class="more"><router-link to="">{{ edu.more }}</router-link></div>
+                <ul class="see list-unstyled d-flex align-items-baseline p-0">
+                  <li class="icon mx-1"><img src="@/assets/icon/education/eye.png" alt=""></li>
+                  <li class="numbers mx-1">{{ edu.number }}</li>
+                  <li class="text mx-1">{{ edu.see }}</li>
+                </ul>
+              </div>
+            </div>
+<!--          </div>-->
+        </swiperSlide>
+      </swiper>
     </div>
   </div>
 </template>
 
 <style scoped>
 .card-header img{
+  height: 100%;
+  width: 100%;
+
+}
+figure{
   height: 151px;
+  max-width: 496px ;
 }
 .full-date {
   font-weight: 300;
@@ -64,6 +101,12 @@ const props = defineProps(['educations'])
   letter-spacing: -5%;
   text-align: justify;
   color: #353535;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
 }
 
 .icon {
@@ -95,12 +138,6 @@ const props = defineProps(['educations'])
   position: absolute;
   font-size: 0.8rem;
 }
-@media (max-width: 768px) {
-  .col-md-4:nth-child(1){
-    display: none;
-  }
-  .col-md-4:nth-child(2){
-    display: none;
-  }
+@media (max-width: 767.99) {
 }
 </style>

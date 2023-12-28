@@ -11,6 +11,7 @@
     color: #292D32 !important;
     transform: rotate(180deg) !important;
     font-size: 2rem;
+
 }
 .swiper-button-next::after{
     content: "\27A1" !important;
@@ -23,7 +24,21 @@
     left: 90px !important;
     right: unset !important;
      font-size: 2rem;
+
 }
 .swiper-button-prev::after{
     content: "\27A1" !important;
+}
+
+@media (max-width: 400px) {
+    .swiper-button-prev{
+        font-size: 1.5rem;
+        top: -4.5px!important;
+        left: 55px !important;
+    }
+.swiper-button-next{
+    top: -4px!important;
+    font-size: 1.5rem;
+    left: 20px !important;
+}
 }

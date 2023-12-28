@@ -3,7 +3,7 @@
 <div class="container">
   <div class="category">
     <figure>
-      <img src="@/assets/icon/category/category.png" alt="">
+      <img src="@/assets/icon/category/category.png" class="" alt="">
       <figcaption>
         <span class="last">{{ props.data }}</span><span class="school">{{props.name}}</span><span class="most">{{props.most}}</span>
       </figcaption>

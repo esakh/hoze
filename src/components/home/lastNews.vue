@@ -1,10 +1,11 @@
 <template>
   <div class="container bg-white  pt-4 pt-md-4 pt-lg-4  px-3 position-relative">
-    <div class="category-title">
+    <div class="category-title d-none d-md-block">
       <categoryTitle :data="category"/>
     </div>
+    <div class="last-news-title d-md-none"><h3>آخرین اخبار</h3></div>
     <div class="all-news-title">
-      <router-link class="text-decoration-none" to="">همه اخبار ...</router-link>
+      <router-link class="all-news-title-link text-decoration-none d-none d-md-block " to="">همه اخبار ...</router-link>
     </div>
     <div class="row d-none d-md-block">
       <last-news-card :data="data"/>
@@ -71,9 +72,25 @@ a{
   //line-height: 25.43;
   //letter-spacing: -3.5px;
   text-align: justify;
-  position: absolute;
-  top: 21px;
-  left: 40px;
-
+}
+.all-news-title{
+  display: flex;
+  justify-content: left;
+  margin-left: 0.5rem;
+}
+.all-news-title-link{
+  cursor: pointer !important;
+  color: #095195;
+}
+@media (max-width: 767.99px) {
+  .container{
+    background-color: transparent !important;
+  }
+  .last-news-title h3{
+    letter-spacing: -4.5%;
+    font-size: 14.91px;
+    font-weight: 700;
+    color: #095195 ;
+  }
 }
 </style>

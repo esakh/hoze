@@ -3,16 +3,19 @@
     <div class="row special-news px-1">
       <div class="special-news-title mb-3">
         <h3 class="last-news">  اخبار ویژه </h3>
-      </div>
+  </div>
       <swiper
           :slidesPerView="1"
+          :autoplay="{
+            delay:6000
+          }"
           :loop="true"
           :space-between="15"
           :pagination="{
             clickable:true,
             }"
           :navigation="true"
-          :modules="[Navigation]"
+          :modules="[Navigation , Autoplay]"
           class="mySwiper d-flex justify-content-between"
           :breakpoints='{
               "768":{
@@ -37,7 +40,7 @@
               </div>
               <div class="card-footer">
                 <span class="time">{{ item.time }}</span>
-                <span class="more-information">{{ item.more }}</span>
+                <router-link to="" class="more-information text-decoration-none text-dark">{{ item.more }}</router-link>
               </div>
             </div>
           </div>
@@ -55,7 +58,7 @@
 
 import {ref} from "vue";
 import {Swiper, SwiperSlide} from 'swiper/vue'
-import {Navigation} from "swiper/modules";
+import {Autoplay, Navigation} from "swiper/modules";
 import 'swiper/css'
 import 'swiper/css/pagination'
 import "@/assets/style/swiperSpecialNews.css";
@@ -153,9 +156,12 @@ p {
   margin-left: 1rem;
   font-size: 8.56px;
   font-weight: 500;
+  z-index: 1;
 //padding-left: 3px;
 }
-
+.more-information:hover{
+  color: #FFFFFF !important;
+}
 .more-information::after {
   position: absolute;
   content: "\2190";
@@ -163,9 +169,52 @@ p {
   left: -14px;
   font-weight: bold;
   font-size: 13px;
+  transition: 0.3s;
+}
+.more-information::before{
+  content: "";
+  position: absolute;
+  background-color: #095195;
+  width: 0;
+  height: 130%;
+  left: -20px;
+  border-radius: 20px;
+  z-index: -1;
+  transition: width 0.3s;
+} /* با استفاده از transform-origin  آیتم ها از یک سمت وارد میشود واز همون سمت بعد هاور خارح میشهود.*/
+.more-information:hover::after{
+  top: -1.8px;
+  transform: rotate(180deg);
+  color: #FFFFFF;
+  transition: 0.5s;
 
 }
+.more-information:hover::before{
+  width: 150%;
+  transition: 0.5s;
 
+}
+@media (max-width: 400px) {
+  h3{
+    font-size: 15px;
+  }
+}
+@media (max-width: 767.9px) {
+  h3{
+    font-size: 15px;
+  }
+  .time{
+    font-size: 8px;
+  }
+  .more-information , ::after{
+    font-size: 8px;
+  }
+  p{
+    font-size: 9.33px;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+}
 
 
 

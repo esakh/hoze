@@ -30,7 +30,39 @@
     border: 1px solid #3498db;
     color: white;
 }
-
+ul{
+    padding: 0;
+}
 .active-page:hover {
     background-color: #2988c8;
+}
+
+@media screen and (max-width: 576px){
+    .paginate-buttons {
+        height: auto;
+        width: auto;
+        font-size: 12px;
+    }
+    ul{
+        display: flex !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        column-gap: 0 !important;
+    }
+    .number-buttons , .ending-breakpoint-button , .starting-breakpoint-button ,.last-button , .first-button{
+        margin: 0 !important;
+        column-gap: 0;
+        border-radius: 0 !important;
+
+    }
+    .back-button{
+        border-bottom-right-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        margin-right: 1px;
+    }
+    .next-button{
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        margin-left: 1px;
+    }
 }

@@ -1,8 +1,10 @@
 
 
   <script setup>
-    import {ref , defineProps} from 'vue'
+    import {ref , defineProps , inject} from 'vue'
     const props = defineProps(['mvc'])
+    const removeDate = inject('removeDate')
+    console.log(removeDate)
     let items;
     items = ref(
         {
@@ -36,7 +38,7 @@
             </svg>
           </span>
         </li>
-        <li class="date-news ">
+        <li class="date-news " v-if="!removeDate">
           <span>{{ items.card_date }}</span>
           <span class="icon mx-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">

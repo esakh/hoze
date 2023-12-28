@@ -1,6 +1,6 @@
 <template>
   <div class="container overflow-hidden">
-    <section class="header-banner my-5">
+    <section class="header-banner my-5 mt-md-4 ">
       <bannerTop :data="socialCard"/>
     </section>
     <section>
@@ -124,3 +124,12 @@ const education = ref([
   }
 ])
 </script>
+<style scoped>
+@media (max-width: 991.9px){
+  aside{
+    display: flex;
+    flex-direction: column-reverse;
+
+  }
+}
+</style>

@@ -8,22 +8,21 @@ const props = defineProps(['data'])
 <template>
   <div class="conatainer  ">
 
-    <router-link to="" class="card border-0 row text-decoration-none flex-row p-2" v-for="item in props.data"
-                 :key="item">
+    <div  class="card border-0 row text-decoration-none flex-row p-2" v-for="item in props.data" :key="item">
       <div class=" card-image p-0 col-md-3 col-4 ">
         <div class="full-date position-relative d-flex flex-column align-items-center">
           <div class=" date-mounth d-flex justify-content-center "><span class="text">{{ item.card_date_day }}</span>
           </div>
-          <div class="date-day d-flex justify-content-center align-items-start  "> {{ item.card_date_mounth }}</div>
+          <div class="date-day d-flex justify-content-center align-items-start "> {{ item.card_date_mounth }}</div>
         </div>
       </div>
       <div class=" card-body col-md-9 col-8  p-2">
-        <div class="text-school"><p class="card-title w-100">{{ item.card_body }}</p></div>
+        <router-link to="" class="text-school text-decoration-none "><p class="card-title w-100"><router-link class="text-decoration-none" to="">{{ item.card_body }}</router-link></p></router-link>
         <div class="info-school ">
-          <authorVisitDateAside/>
+          <authorVisitDateAside />
         </div>
       </div>
-    </router-link>
+    </div>
   </div>
 </template>
 
@@ -65,19 +64,18 @@ const props = defineProps(['data'])
 
 .card-title {
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: justify;
   letter-spacing: -4.5%;
   line-height: 20px;
   color: #525252;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-box-orient: vertical;
+  white-space: nowrap;
 }
-
+.card-title a {
+  color: #525252;
+}
 .card {
   position: relative;
 }
@@ -98,9 +96,7 @@ const props = defineProps(['data'])
 }
 
 @media (max-width: 991.9px) {
-  .info-school {
-    width: 50%;
-  }
+
 }
 
 @media (max-width: 768px) {

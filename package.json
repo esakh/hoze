@@ -12,9 +12,11 @@
     "bootstrap": "^5.3.2",
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",
+    "farvardin": "^1.0.3",
     "swiper": "^11.0.5",
     "vue": "^3.3.11",
     "vue-awesome-paginate": "^1.1.46",
+    "vue-moment": "^4.1.0",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {

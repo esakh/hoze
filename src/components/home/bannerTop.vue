@@ -2,32 +2,33 @@
   <div class="container ">
     <div class="row d-grid  ">
       <div class="grid-lg-6 grid p-0 banner-right">
-        <div class="card">
+        <router-link to="" class="card">
+          <img src="@/assets/icon/crownFlower/crownFlower.png" class="crown-top" alt="">
           <img src="@/assets/icon/banner/banner-one.png" alt="">
           <div class="card-body ">
             <div class="badge badge-pill"><span>{{items[0].category}}</span></div>
             <div class="text-title"><h1>{{items[0].title}}</h1></div>
             <div class="text-body"><p>{{items[0].body}}</p></div>
           </div>
-        </div>
+        </router-link>
       </div>
       <div class="grid-lg-6 grid p-0 banner-left">
-        <div class="card">
+        <router-link to="" class="card">
           <img src="@/assets/icon/banner/banner-two.png" alt="">
           <div class="card-body ">
             <div class="badge badge-pill "><span>{{items[1].category}}</span></div>
             <div class="text-title"><h1>{{items[1].title}}</h1></div>
             <div class="text-body"><p>{{items[1].body}}</p></div>
           </div>
-        </div>
-        <div class="card">
+        </router-link>
+        <router-link to="" class="card">
           <img src="@/assets/icon/banner/banner-three.png" alt="">
           <div class="card-body ">
             <div class="badge badge-pill"><span>{{items[2].category}}</span></div>
             <div class="text-title"><h1>{{items[2].title}}</h1></div>
             <div class="text-body"><p>{{items[2].body}}</p></div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -70,10 +71,18 @@ const items = [
 <style scoped>
 .d-grid {
   grid-template-columns:repeat(2, 1fr);
-  gap: 33px;
+  gap: 30px;
 }
 *{
   color: #FFFFFF;
+}
+.crown-top{
+  width: 120px!important;
+  height: 120px!important;
+  position: absolute;
+  top: -47px;
+  right: -43px;
+  transform: rotate(90deg);
 }
 .card{
   position: relative;
@@ -81,7 +90,31 @@ const items = [
   border: 0;
   border-radius: 16px;
   overflow: hidden;
+
 }
+
+/* start animation card*/
+
+  .card::before{
+    content: "";
+    position: absolute;
+    width: 1050px;
+    height: 100px;
+    background: linear-gradient(   rgba(255, 255, 255, 0.09) 10%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.13));
+    top: -32%;
+    right: 40%;
+      transition: 1.3s;
+    transform-origin: center;
+    transform: rotate(135deg);
+    filter: blur(5px);
+  }
+.card:hover::before{
+  transition: 2.5s ;
+  transform: rotate(135deg)translateY(-4800%);
+
+}
+/* end animation card*/
+
 .card img{
   border-radius: 16px;
   height: 100%;
@@ -92,30 +125,39 @@ const items = [
   bottom: 0;
   padding: 1rem 1rem  0;
   z-index: 1;
+  border-radius: inherit;
 }
 .banner-left{
   display: grid;
-  gap: 33px ;
+  gap: 30px ;
 }
 .text-title h1{
   font-size: 20px;
   letter-spacing: -4.5%;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 .badge{
   font-size: 12px;
   font-weight: 400;
   background-color: fuchsia;
   padding: 0.2rem 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 
 }
 .text-body p{
   font-size: 14px;
-  letter-spacing: -4.5%;
-  font-weight: 400;
   text-align: justify;
+  letter-spacing: -4.5%;
+  line-height: 1.8rem;
+  font-weight: 400;
+  color: #d3d3d3 !important;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .card::after{
@@ -123,6 +165,7 @@ const items = [
   position: absolute;
   inset: 0;
   background:linear-gradient(rgba(255, 255, 255, 0.1) 30%,rgba(0,0,0,0.7));
+  border-radius: inherit;
 }
 @media (max-width: 992px) {
     .d-grid{
@@ -132,6 +175,32 @@ const items = [
     }
   .banner-left{
     gap: 1rem;
+  }
+}
+@media (max-width: 767.9px) {
+  .card{
+    overflow: hidden;
+  }
+  .crown-top,.crown-bottom{
+    display: none;
+  }
+  img{
+    border-radius: 5px;
+  }
+  .text-title h1{
+    font-size: 15px;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+  }
+  .text-body p {
+    line-height: 1.2rem;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .badge{
+    margin-bottom: 0.4rem;
+    font-size: 10px;
   }
 }
 </style>

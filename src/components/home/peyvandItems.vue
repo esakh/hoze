@@ -3,7 +3,7 @@ import {defineProps} from 'vue'
 
 const props = defineProps(['data'])
 import {Swiper, SwiperSlide} from 'swiper/vue';
-import { Controller  } from 'swiper/modules';
+import { Controller ,Autoplay} from 'swiper/modules';
 import 'swiper/css';
 
 
@@ -16,6 +16,9 @@ import 'swiper/css';
   <div class="container mt-5">
     <div class="row ">
       <swiper
+          :autoplay="{
+        delay:4000
+          }"
           :slidesPerView="'auto'"
           :loop="true"
           :spaceBetween="30"
@@ -23,7 +26,7 @@ import 'swiper/css';
       clickable: true,
     }"
 
-          :modules="[Controller]"
+          :modules="[Controller , Autoplay ]"
           :controller="{ control: controlledSwiper }"
           class="mySwiper"
       >
@@ -52,7 +55,7 @@ import 'swiper/css';
 }
 
 .peyvand-title h2 {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 15px;
   line-height: 25.43px;
   letter-spacing: -4.5%;

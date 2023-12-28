@@ -59,4 +59,9 @@ const props = defineProps(['data'])
   width: 100%;
   height: 299px;
 }
+@media screen and (max-width: 768px){
+  .card-title{
+    font-size: 14px;
+  }
+}
 </style>

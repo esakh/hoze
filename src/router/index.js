@@ -3,20 +3,19 @@ import homePage from '../views/HomePage.vue'
 import errorPage from '../views/errorPage.vue'
 const routes = [
 
-
+            {
+                path: '/',
+                name: 'home',
+                component: homePage
+            },
       {
-        path: '/',
-        name: 'home',
-        component: homePage
-      },
-      {
-        path: '/education/education-page',
+        path: '/education-List/education-page',
         name: 'educationPage',
         component: () => import(/* webpackChunkName: "educationPage" */ '../views/educationPage.vue')
       },
       {
-        path: '/education-list',
-        name: 'educationList',
+        path: '/news/newsPage',
+        name: 'newsPage',
         component: ()=>import(/* webpaChunkName:"education-list"*/'../views/educationList.vue')
       },
 

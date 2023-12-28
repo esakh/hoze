@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <div class=" row card p-2 d-flex flex-column flex-md-row border-0 mt-3 mb-4 py-4 d-none d-md-flex "
-         v-for="item in props.data" :key="item">
+    <div class=" row card p-2 d-flex flex-column flex-md-row border-0 mt-3 mt-lg-4 mb-3 py-3 d-none d-md-flex "
+         v-for="item in props.data" :key="item" :class="{showItemInEducationPage:theme===true}">
       <div class="col-lg-4 col-md-3 p-0 d-flex align-items-center">      <!-- قرار گرفتن عکس دروسط کادر-->
-        <div class=" card-header bg-transparent  p-0 border-0 ">
-          <figure class="">
+        <div class=" card-header bg-transparent w-100 h-100 p-0 border-0 ">
+          <figure class="h-100">
             <img src="@/assets/icon/lastNews/last-news-one.png" alt="">
           </figure>
         </div>
@@ -33,12 +33,17 @@
 <script setup>
 import {defineProps} from 'vue'
 import schoolVisitDate from '@/components/cardInfo/authorVisitDate.vue'
+
 const props = defineProps(['data', 'theme'])
 </script>
 <style scoped>
 .container {
   overflow: hidden;
   position: relative;
+}
+
+.card {
+  cursor: pointer;
 }
 
 figure {
@@ -50,9 +55,12 @@ figure {
 figure img {
   width: 100%;
   height: 100%;
+  transition: 0.5s;
 }
 
-
+figure img:hover {
+  transform: scale(1.1);
+}
 
 .top-title-news {
   font-weight: 400;
@@ -85,6 +93,7 @@ figure img {
   color: #095195;
 }
 
+
 .card-text-news p {
   font-weight: 400;
   font-size: 11.5px;
@@ -111,8 +120,7 @@ div > a {
   color: #12122f !important;
   font-size: 9.56px;
   font-weight: 400;
-//line-height: 17.93; letter-spacing: -3.5%; text-align: justify;
-  border: 1px solid #095195;
+//line-height: 17.93; letter-spacing: -3.5%; text-align: justify; border: 1px solid #095195;
   border-radius: 16px;
   height: 26px !important;
   max-width: 96px !important;
@@ -132,8 +140,30 @@ div > a {
   transform: translateY(50%) scale(2.5);
 }
 
-.container > .row.card:last-child::after  {
+.container > .row.card:last-child::after {
   border-bottom: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .card-title-news h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.more a {
+  transition: 0.3s;
+}
+
+.more:hover a {
+  background-color: #095195;
+  color: #FFFFFF !important;
+  transition: background-color 0.5s;
+
 }
 
 @media (max-width: 400px ) {
@@ -141,5 +171,9 @@ div > a {
     font-size: 8px;
     padding: 8px 10px !important;
   }
+}
+
+.showItemInEducationPage {
+  display: flex !important;
 }
 </style>
