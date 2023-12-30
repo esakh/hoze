@@ -11,14 +11,14 @@
           </button>
 
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+          <ul class="navbar-nav mx-auto  mb-2 mb-lg-0 ">
             <li class="nav-item mx-2 " v-for="item in items" :key="item">
-              <router-link class="nav-link p-0" aria-current="page" to="">{{ item }}</router-link>
+              <router-link class="nav-link p-0" aria-current="page" :to="item.url">{{ item.name }}</router-link>
             </li>
           </ul>
         </div>
       </div>
-      <Transition mode="out-in" name="slide-fade"><NavbarMobile v-if="navbarMobile"   @closeNavbarMobile="closeNavbarMobile" /></Transition>
+      <Transition mode="out-in" name="slide-fade"><NavbarMobile v-if="navbarMobile" :url="items"  @closeNavbarMobile="closeNavbarMobile" /></Transition>
     </nav>
   </div>
 </template>
@@ -30,14 +30,30 @@ function closeNavbarMobile(){
   navbarMobile.value = false
 }
 const items = ref([
-  "صفحه اصلی",
-  "حوزه مدیریت ",
-  " معاونت پژوهش",
-  "معاونت آموزش",
-  "چند رسانه ای ",
-  "تماس با ما ",
-  "اخبار ",
-  "درباره ما",
+  { name:"صفحه اصلی",
+    url:'/'
+  },
+  { name:"حوزه مدیریت ",
+    url:''
+  },
+  { name:" معاونت پژوهش",
+    url:''
+  },
+  { name:"معاونت آموزش",
+    url:'/education-List/education-page'
+  },
+  { name:"چند رسانه ای ",
+    url:''
+  },
+  { name:"تماس با ما ",
+    url:'/contact-us'
+  },
+  { name:"اخبار ",
+    url:'/news/newsPage'
+  },
+  { name: "درباره ما",
+    url:''
+  },
 ])
 watch(navbarMobile , ()=>{
   if (navbarMobile.value){

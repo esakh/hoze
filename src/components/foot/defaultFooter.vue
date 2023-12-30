@@ -1,55 +1,101 @@
 <script setup>
 import {ref} from 'vue'
+import instagram from '@/assets/icon/social-app/instagram.svg'
+import telegram from '@/assets/icon/social-app/telegram.svg'
+import whatsapp from '@/assets/icon/social-app/whatsup.svg'
+import linkedin from '@/assets/icon/social-app/linkedin.svg'
+import facebook from '@/assets/icon/social-app/facebook.svg'
+import twitter from '@/assets/icon/social-app/twitter.svg'
+
+
+import location from '@/assets/icon/address/location.svg'
+import phone from '@/assets/icon/address/phone.svg'
+import email from '@/assets/icon/address/email.svg'
+
 
 const data = ref({
+  social_app: [
+    {
+      name: 'telegram',
+      img: telegram
+    },
+    {
+      name: 'twitter',
+      img: twitter
+    },
+    {
+      name: 'instagram',
+      img: instagram
+    },
+    {
+      name: 'facebook',
+      img: facebook
+    },
+    {
+      name: 'linkedin',
+      img: linkedin
+    },
+    {
+      name: 'whatsapp',
+      img: whatsapp
+    },
+  ],
   address: [
     {
       partOne: 'شماره های ',
       partTwo: 'ارتباطی',
-      info: '09118738301 - 09118738301'
+      info: '09118738301 - 09118738301',
+      img:phone
     },
     {
       partOne: 'ایمیل ',
       partTwo: 'ارتباطی',
       info: 'esakhanzadi@gmail.com',
+      img:email
     },
     {
       partOne: 'آدرس ',
       partTwo: 'حوزه:',
       info: 'ایران ، گرگان ، شهرک ویلاشهر ، وبلاشهر 14 ، شرکت برنامه نویسی شتاب آموز',
+      img:location
     },
   ],
-  links: {
-    goodLinks: [
+  links:
       {
-        title: "صفحه اصلی"
-      },
-      {
-        title: "حوزه مدیریت"
-      },
-      {
-        title: "معاونت پژوهش"
-      },
-      {
-        title: "معاونت آموزش"
+        goodLinks: [
+          {
+            title: "صفحه اصلی"
+          },
+          {
+            title: "حوزه مدیریت"
+          },
+          {
+            title: "معاونت پژوهش"
+          },
+          {
+            title: "معاونت آموزش"
+          }
+        ],
+        serviceslinks:
+            [
+              {
+                title: 'تماس با ما'
+              },
+              {
+                title: 'اخبار'
+              },
+              {
+                title: 'درباره ما '
+              }
+            ]
       }
-    ],
-    serviceslinks: [
-      {
-        title: 'تماس با ما'
-      },
-      {
-        title: 'اخبار'
-      },
-      {
-        title: 'درباره ما '
-      }
-    ]
-  },
+  ,
   center: {
     title: ' حوزه علمیه خواهران گرگان',
-    text: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفـای کاربردی  طراحان خلاقی و فرهنگ پیـشرو در زبان فـارسـی ایجاد کرد. در این در ارائه راهـکارها و شرایط سخت تایپ ازلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفـای کاربردی  طراحان خلاقی و فرهنگ پیـشرو در زبان فـارسـی ایجاد کرد. در این در ارائه راهـکارها و شرایط سخت تایپ از ... ...\n'
-  },
+    text:
+        'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفـای کاربردی  طراحان خلاقی و فرهنگ پیـشرو در زبان فـارسـی ایجاد کرد. در این در ارائه راهـکارها و شرایط سخت تایپ ازلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفـای کاربردی  طراحان خلاقی و فرهنگ پیـشرو در زبان فـارسـی ایجاد کرد. در این در ارائه راهـکارها و شرایط سخت تایپ از ... ...\n'
+  }
+  ,
 })
 </script>
 
@@ -98,49 +144,20 @@ const data = ref({
           <ul class="contact-us list-unstyled d-flex flex-column align-items-start p-0">
             <li class="my-2" v-for="item in data.address" :key="item">
               <span class="icon mx-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M11.5099 0.553223C12.5115 0.553223 13.4751 0.898824 14.1839 1.51895C14.8935 2.13777 15.2901 2.97244 15.2901 3.84622V8.99764C15.2901 10.8169 13.5946 12.2906 11.5099 12.2906H4.13101C2.04634 12.2906 0.351562 10.8169 0.351562 8.99764V3.84622C0.351562 2.02692 2.03887 0.553223 4.13101 0.553223H11.5099ZM12.6983 4.81782L12.758 4.76565C12.9365 4.57655 12.9365 4.30268 12.7498 4.11357C12.646 4.01641 12.5033 3.95707 12.3547 3.94403C12.1978 3.93686 12.0484 3.98316 11.9356 4.07445L8.56775 6.42193C8.13454 6.73558 7.51384 6.73558 7.0739 6.42193L3.71273 4.07445C3.48044 3.92447 3.15926 3.94403 2.96581 4.12009C2.76414 4.29616 2.74173 4.57655 2.91277 4.77217L3.01062 4.85694L6.40914 7.17182C6.82742 7.45874 7.33458 7.61524 7.86564 7.61524C8.39522 7.61524 8.91134 7.45874 9.32887 7.17182L12.6983 4.81782Z"
-                fill="#095195"/>
-                </svg>
+                  <img :src="item.img" alt="">
               </span>
-              <p class="mb-1 d-inline">
+              <p class="mb-1 d-inline me-1">
                 <span style="color: #095195">{{ item.partOne }}</span>
                 <span>{{ item.partTwo }}</span>
               </p>
-              <span class="phone-number d-block">{{ item.info }}</span>
+              <span class="phone-number d-block me-3 mt-2 ">{{ item.info }}</span>
             </li>
             <li>
               <section class=" d-md-none activeInMobileMode">
                 <div class="row social-logo">
                   <ul class="social me-3 nav justify-content-center align-items-center">
-                    <li class="nav-item">
-                      <router-link to="" class="nav-link text-center"><img src='@/assets/icon/social-app/telegram.svg'
-                                                               alt="telegram">
-                      </router-link>
-                    </li>
-                    <li class="nav-item">
-                      <router-link to="" class="nav-link text-center"><img src='@/assets/icon/social-app/instagram.svg'
-                                                               alt="instagram">
-                      </router-link>
-                    </li>
-                    <li class="nav-item">
-                      <router-link to="" class="nav-link text-center"><img src='@/assets/icon/social-app/twitter.svg' alt="twitter">
-                      </router-link>
-                    </li>
-                    <li class="nav-item">
-                      <router-link to="" class="nav-link text-center"><img src='@/assets/icon/social-app/facebook.svg'
-                                                               alt="facebook">
-                      </router-link>
-                    </li>
-                    <li class="nav-item">
-                      <router-link to="" class="nav-link text-center"><img src='@/assets/icon/social-app/telegram.svg'
-                                                               alt="telegram">
-                      </router-link>
-                    </li>
-                    <li class="nav-item">
-                      <router-link to="" class="nav-link text-center"><img src='@/assets/icon/social-app/whatsup.svg' alt="whatsup">
-                      </router-link>
+                    <li class="nav-item" v-for="item in data.social_app" :key="item">
+                      <router-link to="" class="nav-link text-center"><img :src='item.img' :alt="item.name"></router-link>
                     </li>
                   </ul>
                 </div>
@@ -152,29 +169,8 @@ const data = ref({
         <section class="d-none d-md-block">
           <div class="row social-logo">
             <ul class="social nav p-0 justify-content-center align-items-center">
-              <li class="nav-item">
-                <router-link to="" class="nav-link"><img src='@/assets/icon/social-app/telegram.svg' alt="telegram">
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="" class="nav-link"><img src='@/assets/icon/social-app/instagram.svg' alt="instagram">
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="" class="nav-link"><img src='@/assets/icon/social-app/twitter.svg' alt="twitter">
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="" class="nav-link"><img src='@/assets/icon/social-app/facebook.svg' alt="facebook">
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="" class="nav-link"><img src='@/assets/icon/social-app/telegram.svg' alt="telegram">
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="" class="nav-link"><img src='@/assets/icon/social-app/whatsup.svg' alt="whatsup">
-                </router-link>
+              <li class="nav-item" v-for="item in data.social_app" :key="item">
+                <router-link to="" class="nav-link"><img :src='item.img' :alt="item.name"></router-link>
               </li>
             </ul>
           </div>
@@ -303,13 +299,14 @@ const data = ref({
 }
 
 
-
-.good-link-grid{
+.good-link-grid {
   position: relative;
 }
-.good-link-grid::before{
+
+.good-link-grid::before {
 
 }
+
 @media (max-width: 767.9px) {
   .container-fluid > img {
     max-width: 250px;
@@ -400,4 +397,6 @@ const data = ref({
     font-size: 8px;
   }
 }
+
+
 </style>

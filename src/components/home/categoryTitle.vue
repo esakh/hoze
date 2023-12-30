@@ -4,8 +4,8 @@
   <div class="category">
     <figure>
       <img src="@/assets/icon/category/category.png" class="" alt="">
-      <figcaption>
-        <span class="last">{{ props.data }}</span><span class="school">{{props.name}}</span><span class="most">{{props.most}}</span>
+      <figcaption :class="{ changeTop: props.schoolNews === 'schoolNews'|| props.most === 'most' || props.category === 'category' }" >
+        <span  :class="{ last: props.lastNews === 'lastNews' , school: props.schoolNews === 'schoolNews'  ,most: props.most === 'most' , categoryNews: props.category==='category'}" >{{ props.data }}</span>
       </figcaption>
     </figure>
   </div>
@@ -13,7 +13,7 @@
 </template>
 <script setup>
 import {defineProps} from 'vue'
-const props = defineProps(['data' , 'name'])
+const props = defineProps(['data' ,'most' , 'lastNews','schoolNews' , 'category'])
 </script>
 
 <style scoped>
@@ -39,22 +39,31 @@ figcaption {
   font-size: 18px;
   color: #FFFFFF;
   line-height: 36px;
-  letter-spacing: -0.5%;
   text-align: justify;
 }
 .school{
   font-weight: 400;
   font-size: 14px;
   line-height: 28px;
-  letter-spacing: -3.5%;
   color:#fff;
   font-family: inter;
 }
 .most {
-  font-size: 14px;
+  font-size: 14px ;
   font-weight: 500;
   line-height: 28px;
-  letter-spacing: -4.5%;
   text-align: justify;
+  color: #FFFFFF !important;
+}
+figcaption.changeTop{
+  top: 4px ;
+}
+
+
+.categoryNews{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  color:#fff;
 }
 </style>

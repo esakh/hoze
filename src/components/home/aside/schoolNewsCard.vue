@@ -1,14 +1,33 @@
 <script setup>
-import {defineProps} from 'vue'
+import {defineProps, onMounted} from 'vue'
 import authorVisitDateAside from '@/components/home/aside/authorVisitDateAside.vue'
 
 const props = defineProps(['data'])
+
+onMounted(() => {
+  const boxes = document.querySelectorAll('.box')
+  document.body.onload = showBox()
+  window.addEventListener("scroll", showBox)
+
+
+  function showBox() {
+    const triggerBottom = window.innerHeight / 1.08
+    // console.log(triggerBottom);
+    boxes.forEach(box => {
+      const boxTop = box.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        box.classList.add('show')
+      }
+    })
+  }
+
+})
 </script>
 
 <template>
   <div class="conatainer  ">
 
-    <div  class="card border-0 row text-decoration-none flex-row p-2" v-for="item in props.data" :key="item">
+    <div  class="card border-0 row text-decoration-none flex-row p-2 box" v-for="item in props.data" :key="item">
       <div class=" card-image p-0 col-md-3 col-4 ">
         <div class="full-date position-relative d-flex flex-column align-items-center">
           <div class=" date-mounth d-flex justify-content-center "><span class="text">{{ item.card_date_day }}</span>
@@ -103,5 +122,18 @@ const props = defineProps(['data'])
   .info-school {
     width: 100% !important;
   }
+}
+
+.box {
+  transform: translate(-100%);
+  transition: transform 0.5s ease;
+}
+
+.box:nth-child(even) {
+  transform: translate(100%);
+}
+
+.box.show {
+  transform: translate(0);
 }
 </style>

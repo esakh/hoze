@@ -4,7 +4,6 @@ import schoolNewsCard from "@/components/home/aside/schoolNewsCard.vue";
 import CategoryTitle from "@/components/home/categoryTitle.vue";
 const schoolContainer = ref(null)
 const removeDate = ref(false)
-provide()
 onMounted(()=>{
 window.addEventListener('resize' , ()=>{
   if(window.innerWidth < 767.9){
@@ -58,7 +57,7 @@ const data = ref([
 <template>
 <div ref="schoolContainer" class="container  pt-4  pt-md-5 pb-0 mt-4 mt-lg-0 bg-white position-relative">
   <div class="row d-none d-md-block">
-    <categoryTitle :name="name"/>
+    <categoryTitle schoolNews="schoolNews" :data="name" />
   </div>
   <div class="row category-mobile-container mb-3 mb-md-0 ">
     <div class="header-schoolNewsCard d-flex justify-content-end"><router-link to="" class="all-school-news text-decoration-none">همه اطلاعیه ها ...</router-link></div>

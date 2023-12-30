@@ -1,6 +1,5 @@
 <script setup>
-import {ref, watch} from 'vue'
-
+import {onMounted, ref, watch} from 'vue'
 
 const theme = ref(true)
 const show = ref(false)
@@ -12,27 +11,40 @@ const showMostVisitedNews = ref(false)
 const mostVisited = ref(null)
 
 const width = ref(window.innerWidth)
-document.onload=showMobileMode()
-window.addEventListener('resize' , ()=>{
+if (window.innerWidth > 992) {
+  document.onload = showMobileMode()
+}
+window.addEventListener('resize', () => {
   width.value = window.innerWidth
 })
-watch(width ,()=>{
-  if (width.value > 991.9){
+watch(width, () => {
+  if (width.value > 991.9) {
     show.value = true
-  }
-  else {
+  } else {
     show.value = false
   }
 })
-function showMobileMode(){
+
+function showMobileMode() {
   activeShowInMobileMode.value = !activeShowInMobileMode.value
-  if (activeShowInMobileMode.value){
+  if (activeShowInMobileMode.value) {
     show.value = true
-  }
-  else {
+  } else {
     show.value = false
   }
 }
+
+
+
+
+onMounted(()=>{
+  const showMore = document.querySelector('.category-news')
+  const btn = document.querySelector('.category-news-btn')
+  btn.addEventListener('click' , ()=>{
+    showMore.classList.toggle('active')
+  })
+})
+
 const dataBreadCrumb = ref({
   pages: [
     {
@@ -98,10 +110,11 @@ import SearchBox from "@/components/search/searchBox.vue";
 import LastNewsCard from "@/components/home/lastNewsCard.vue";
 import PagePagination from "@/components/pagination/pagePagination.vue";
 import BreadCrumb from "@/components/breadCrumb/breadCrumb.vue";
+import categoryNews from '@/components/categoryNews/categoryNews.vue'
 </script>
 
 <template>
-  <div class="container">
+  <div class="container ">
     <div class="row">
       <bread-crumb :data="dataBreadCrumb"/>
     </div>
@@ -117,10 +130,14 @@ import BreadCrumb from "@/components/breadCrumb/breadCrumb.vue";
             <div class="search-box mb-4">
               <search-box/>
             </div>
-            <div class="most-visited my-3 my-lg-0">
-              <button @click="showMobileMode" class="btn btn-outline-primary w-100 d-lg-none mb-3">پربازدید ترین ها
-              </button>
-              <mostvisited :showNews="showMostVisitedNews" ref="mostVisited" v-if="show"/> <!--class=" d-none d-lg-block" -->
+            <div class="category-news-container">
+              <button  class="btn category-news-btn w-100 d-lg-none mb-3"> دسته بندی اخبار</button>
+              <transition><category-news   class=" category-news " /></transition>
+            </div>
+
+            <div class="most-visited my-2 my-lg-0">
+              <button  @click="showMobileMode" class="btn  w-100 d-lg-none mb-3">پربازدید ترین ها</button>
+              <mostvisited :showNews="showMostVisitedNews " ref="mostVisited" v-if="show"/>
 
             </div>
           </aside>
@@ -140,7 +157,42 @@ import BreadCrumb from "@/components/breadCrumb/breadCrumb.vue";
   background-color: #FFFFFF;
 }
 
-.pagination {
-//width: 370px; margin: auto;
+
+.btn {
+  font-weight: 700;
+  font-size: 9px;
+  color: #FFFFFF;
+  background-color: #095195;
+}
+.btn:active{
+  transform: scale(0.99) !important;
+  background-color: #095195 !important;
+  color: #FFFFFF !important;
+}
+.category-news {
+  display:none
+}
+
+@media (min-width:992px){
+  .category-news {display:block}
+}
+@media (max-width:991.9px){
+  .category-news.active{
+    display: block !important; ;
+  }
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>

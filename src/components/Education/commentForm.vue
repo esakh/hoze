@@ -153,9 +153,9 @@ const data = ref({
 .question .contact-img {
   position: relative;
   background-color: #d9d9d9;
-  width: 50px;
-  height: 50px;
-  margin-top: 1rem;
+  width: 30px;
+  height: 30px;
+  margin-top: 1.2rem;
   margin-right: 1rem;
   display: flex;
   justify-content: center;
@@ -164,8 +164,8 @@ const data = ref({
 }
 
 .question .contact-img svg {
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
 }
 .question {
   background-color: transparent;
@@ -232,8 +232,8 @@ const data = ref({
 }
 
 .question .answer-icon {
-  width: 12px;
-  height: 7.23px;
+  //width: 18px;
+  //height: 10px;
 }
 
 .question .dislike-icon, .like-icon {
@@ -285,9 +285,9 @@ const data = ref({
 .answer .contact-img {
   position: relative;
   background-color: #095195;
-  width: 50px;
-  height: 50px;
-  margin-top: 1rem;
+  width: 30px;
+  height: 30px;
+  margin-top: 1.2rem;
   margin-right: 1rem;
   display: flex;
   justify-content: center;
@@ -296,8 +296,8 @@ const data = ref({
 }
 
 .answer .contact-img svg {
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
 }
 
 .answer .card-body {
@@ -312,7 +312,7 @@ const data = ref({
   width: 30px;
   height: 32px;
   top: 28px;
-  left: -18px;
+  left: -18.5px;
   border: 0;
   transform: rotate(180deg);
 }
@@ -367,8 +367,8 @@ color:#fff;
 }
 
 .answer .answer-icon {
-  width: 12px;
-  height: 7.23px;
+  //width: 18px;
+  //height: 9.23px;
 }
 
 .answer .dislike-icon, .like-icon {
@@ -391,54 +391,54 @@ color:#fff;
 
 @media screen and (min-width: 768.1px) {
   .question .contact-img{
-    width: 55px;
-    height: 55px;
-    margin-top: 0.5rem;
+    width: 40px;
+    height: 40px;
+    margin-top: 1.1rem;
   }
   .answer .contact-img{
-    width: 55px;
-    height: 55px;
-    margin-top: 0.5rem;
+    width: 40px;
+    height: 40px;
+    margin-top: 1.1rem;
   }
   .question .contact-img svg{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
   .answer .contact-img svg{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
 }
 @media screen and (min-width: 992.1px) {
   .question .contact-img{
-    width: 60px;
-    height: 60px;
-    margin-top: 0.5rem;
+    width: 45px;
+    height: 45px;
+    margin-top: 1rem;
   }
   .question .contact-img svg{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
   }
   .answer .contact-img svg{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
   }
   .answer .contact-img{
-    width: 60px;
-    height: 60px;
-    margin-top: 0.5rem;
+    width: 40px;
+    height: 40px;
+    margin-top: 1rem;
   }
 }
 @media screen and (min-width: 1200.1px) {
   .question .contact-img{
-    width: 70px;
-    height: 70px;
-    margin-top: 0.5rem;
+    width: 40px;
+    height: 40px;
+    margin-top: 1rem;
   }
   .answer .contact-img{
-    width: 70px;
-    height: 70px;
-    margin-top: 0.5rem;
+    width: 40px;
+    height: 40px;
+    margin-top: 1rem;
   }
 }
 </style>

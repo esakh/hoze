@@ -1,10 +1,10 @@
 <template>
   <div class="container ">
     <div class="row d-grid  ">
-      <div class="grid-lg-6 grid p-0 banner-right">
-        <router-link to="" class="card">
+      <div class="grid-lg-6 grid p-0 banner-right overflow-hidden">
+        <router-link to="" class="card overflow-hidden">
           <img src="@/assets/icon/crownFlower/crownFlower.png" class="crown-top" alt="">
-          <img src="@/assets/icon/banner/banner-one.png" alt="">
+          <img src="@/assets/icon/banner/banner-one.png" alt="" class="img-banner">
           <div class="card-body ">
             <div class="badge badge-pill"><span>{{items[0].category}}</span></div>
             <div class="text-title"><h1>{{items[0].title}}</h1></div>
@@ -13,16 +13,16 @@
         </router-link>
       </div>
       <div class="grid-lg-6 grid p-0 banner-left">
-        <router-link to="" class="card">
-          <img src="@/assets/icon/banner/banner-two.png" alt="">
+        <router-link to="" class="card overflow-hidden">
+          <img src="@/assets/icon/banner/banner-two.png" class="img-banner" alt="">
           <div class="card-body ">
             <div class="badge badge-pill "><span>{{items[1].category}}</span></div>
             <div class="text-title"><h1>{{items[1].title}}</h1></div>
             <div class="text-body"><p>{{items[1].body}}</p></div>
           </div>
         </router-link>
-        <router-link to="" class="card">
-          <img src="@/assets/icon/banner/banner-three.png" alt="">
+        <router-link to="" class="card overflow-hidden">
+          <img src="@/assets/icon/banner/banner-three.png" class="img-banner" alt="">
           <div class="card-body ">
             <div class="badge badge-pill"><span>{{items[2].category}}</span></div>
             <div class="text-title"><h1>{{items[2].title}}</h1></div>
@@ -90,29 +90,12 @@ const items = [
   border: 0;
   border-radius: 16px;
   overflow: hidden;
-
 }
 
 /* start animation card*/
 
-  .card::before{
-    content: "";
-    position: absolute;
-    width: 1050px;
-    height: 100px;
-    background: linear-gradient(   rgba(255, 255, 255, 0.09) 10%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.13));
-    top: -32%;
-    right: 40%;
-      transition: 1.3s;
-    transform-origin: center;
-    transform: rotate(135deg);
-    filter: blur(5px);
-  }
-.card:hover::before{
-  transition: 2.5s ;
-  transform: rotate(135deg)translateY(-4800%);
 
-}
+
 /* end animation card*/
 
 .card img{
@@ -202,5 +185,11 @@ const items = [
     margin-bottom: 0.4rem;
     font-size: 10px;
   }
+}
+.img-banner{
+  transition:transform 0.5s;
+}
+.card:hover .img-banner{
+  transform: scale(1.15);
 }
 </style>

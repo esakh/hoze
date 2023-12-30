@@ -96,7 +96,9 @@ const items = ref([
 @import "@/assets/style/swiperSpecialNews.css";
 
 .container {
-  border-radius: 16px;
+  //border-radius: 16px;
+  border-radius: 3px;
+  border-top: 3px solid rgba(27, 164, 170, 0.18);
 }
 
 h3 {
@@ -161,6 +163,7 @@ p {
 }
 .more-information:hover{
   color: #FFFFFF !important;
+
 }
 .more-information::after {
   position: absolute;
@@ -181,13 +184,13 @@ p {
   border-radius: 20px;
   z-index: -1;
   transition: width 0.3s;
+  transform-origin:center left ;
 } /* با استفاده از transform-origin  آیتم ها از یک سمت وارد میشود واز همون سمت بعد هاور خارح میشهود.*/
 .more-information:hover::after{
   top: -1.8px;
   transform: rotate(180deg);
   color: #FFFFFF;
   transition: 0.5s;
-
 }
 .more-information:hover::before{
   width: 150%;

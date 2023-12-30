@@ -6,7 +6,7 @@
 }
 .swiper-button-next{
     position: absolute;
-    top: -9px !important;
+    top: -12px !important;
     left: 40px !important;
     color: #292D32 !important;
     transform: rotate(180deg) !important;
@@ -37,7 +37,7 @@
         left: 55px !important;
     }
 .swiper-button-next{
-    top: -4px!important;
+    top: -6.9px!important;
     font-size: 1.5rem;
     left: 20px !important;
 }

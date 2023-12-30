@@ -9,13 +9,13 @@
           <img src="@/assets/icon/rahbari/rahbar.png" alt="rahbar">
         </div>
         <div class="col-lg-7 d-flex flex-column align-items-start ">
-          <div class="card-body">
+          <div class="card-body pb-0">
 
             <div class="education-main ">
               <div class="education-main-title">
                 <h1 class="card-title">{{props.data.banner.title}}</h1>
               </div>
-              <div class="education-main-text p-3 rounded-3 mt-3">
+              <div class="education-main-text p-3 rounded-3 mt-4">
                 <p class="card-text">{{props.data.banner.body}}</p>
               </div>
             </div>

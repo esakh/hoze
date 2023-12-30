@@ -1,7 +1,7 @@
 <template>
   <div class="container bg-white  pt-4 pt-md-4 pt-lg-4  px-3 position-relative">
     <div class="category-title d-none d-md-block">
-      <categoryTitle :data="category"/>
+      <categoryTitle :data="category" lastNews="lastNews"/>
     </div>
     <div class="last-news-title d-md-none"><h3>آخرین اخبار</h3></div>
     <div class="all-news-title">

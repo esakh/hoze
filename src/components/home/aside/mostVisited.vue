@@ -4,7 +4,6 @@ import CategoryTitle from "@/components/home/categoryTitle.vue";
 import MostVisitedCard from "@/components/home/aside/mostVisitedCard.vue";
 const name = ref('پربازدیدترین ها')
 const props = defineProps(['removeMargin', 'showNews'])
-// alert(props.showNews)
 const data = ref([
   {
     category:'هنری',
@@ -35,8 +34,8 @@ const data = ref([
 </script>
 
 <template>
-<div class="container position-relative pt-4 pt-md-5 py-2 my-lg-3 bg-white" :class="{removeMargin:props.removeMargin===true}">
-  <div class="row d-none d-md-block "><categoryTitle  :name="name"/></div>
+<div class="container position-relative pt-4 pt-md-5 py-2 mb-3 mb-lg-0 my-lg-3 bg-white " :class="{removeMargin:props.removeMargin===true}">
+  <div class="row d-none d-md-block "><categoryTitle most="most" :data="name"  /></div>
   <div class="row most-visited-container mb-3 mb-md-0 ">
     <div class="header-mostVisitedCard d-flex justify-content-end"><router-link to="" class="all-school-news text-decoration-none">همه اطلاعیه ها ...</router-link></div>
     <div class="header-mostVisitedCard-title d-md-none "><h3>پربازدید ترین ها</h3></div>

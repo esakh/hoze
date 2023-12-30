@@ -3,10 +3,8 @@ import {defineProps} from 'vue'
 
 const props = defineProps(['data'])
 import {Swiper, SwiperSlide} from 'swiper/vue';
-import { Controller ,Autoplay} from 'swiper/modules';
+import {Controller, Autoplay} from 'swiper/modules';
 import 'swiper/css';
-
-
 
 
 </script>
@@ -30,9 +28,9 @@ import 'swiper/css';
           :controller="{ control: controlledSwiper }"
           class="mySwiper"
       >
-        <swiper-slide v-for="item in props.data" class="py-5"  :key="item">
-            <div
-                class="inner-peyvand bg-white d-flex flex-column justify-content-center align-items-center position-relative">
+        <swiper-slide v-for="item in props.data" class="py-5 " :key="item">
+          <div class="inner-peyvand bg-white ">
+            <div class="d-flex flex-column justify-content-center align-items-center position-relative h-100">
               <div class="peyvand-image"><img src="@/assets/icon/peyvand/peyvand.png" :alt="item.title"></div>
               <div class="peyvand-title"><h2>{{ item.title }}</h2></div>
               <div class="peyvand-body"><p class="peyvand-text-body">{{ item.text }}</p></div>
@@ -41,6 +39,7 @@ import 'swiper/css';
                 <img class="crown-bottom" src="@/assets/icon/crownFlower/crownFlower.png" :alt="item.title">
               </div>
             </div>
+          </div>
         </swiper-slide>
       </swiper>
     </div>
@@ -49,6 +48,7 @@ import 'swiper/css';
 
 <style scoped>
 @import "@/assets/style/swiperPeyvand.css";
+
 .peyvand-image {
   width: 33px;
   height: 33px;
@@ -58,7 +58,6 @@ import 'swiper/css';
   font-weight: 700;
   font-size: 15px;
   line-height: 25.43px;
-  letter-spacing: -4.5%;
   color: #095195;
 }
 
@@ -66,7 +65,6 @@ import 'swiper/css';
   font-weight: 400;
   font-size: 9px;
   line-height: 15.26px;
-  letter-spacing: -5.5%;
 }
 
 .inner-peyvand {
@@ -92,11 +90,20 @@ import 'swiper/css';
   height: 66.44px;
   transform: rotate(180deg);
 }
-swiper{
+
+swiper {
   width: 100%;
 }
-.swiper-slide{
+
+.swiper-slide {
   width: 157px !important;
 }
 
+.position-relative {
+  transition: transform 0.5s;
+}
+
+.inner-peyvand .position-relative:hover {
+  transform: scale(1.05);
+}
 </style>

@@ -3,9 +3,9 @@
     <div class="close-navbar d-flex align-items-center border border-light-subtle rounded-circle border-2 justify-content-center"  @click.self="closeNavbar">
       <span class="btn-close btn-close-white" @click="closeNavbar " ></span></div>
     <ul ref="ul" class="nav flex-column justify-content-center mx-auto " :class="{active : props.close === false }">
-      <li class="nav-item " v-for="item in items" :key="item">
-        <routerLink class="nav-link text-decoration-none" to="/education-list">
-          {{ item }}
+      <li class="nav-item " v-for="item in props.url" :key="item">
+        <routerLink class="nav-link text-decoration-none" :to="item.url">
+          {{ item.name }}
         </routerLink>
       </li>
     </ul>
@@ -18,7 +18,7 @@ import {useRoute} from "vue-router";
 
 const ul = ref(null)
 const route = useRoute()
-const props = defineProps(['close'])
+const props = defineProps(['close','url'])
 const emit = defineEmits(['closeNavbarMobile'])
 watch(route , ()=>{
   closeNavbar()
@@ -26,16 +26,7 @@ watch(route , ()=>{
 function closeNavbar(){
   emit('closeNavbarMobile')
 }
-const items = ref([
-  "صفحه اصلی",
-  "حوزه مدیریت ",
-  " معاونت پژوهش",
-  "معاونت آموزش",
-  "چند رسانه ای ",
-  "تماس با ما ",
-  "اخبار ",
-  "درباره ما",
-])
+
 </script>
 
 <style scoped>
