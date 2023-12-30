@@ -190,6 +190,6 @@ const items = [
   transition:transform 0.5s;
 }
 .card:hover .img-banner{
-  transform: scale(1.15);
+  transform: scale(1.05);
 }
 </style>
