@@ -3,7 +3,7 @@ import {ref , defineProps} from 'vue'
 import CategoryTitle from "@/components/home/categoryTitle.vue";
 import MostVisitedCard from "@/components/home/aside/mostVisitedCard.vue";
 const name = ref('پربازدیدترین ها')
-const props = defineProps(['removeMargin', 'showNews'])
+const props = defineProps(['removeMargin', 'showNews' , 'theme' , 'educationPage'])
 const data = ref([
   {
     category:'هنری',
@@ -34,14 +34,14 @@ const data = ref([
 </script>
 
 <template>
-<div class="container position-relative pt-4 pt-md-5 py-2 mb-3 mb-lg-0 my-lg-3 bg-white " :class="{removeMargin:props.removeMargin===true}">
-  <div class="row d-none d-md-block "><categoryTitle most="most" :data="name"  /></div>
+<div class="container-lg position-relative pt-4 pt-md-5 py-2 mb-3 mb-lg-0 my-lg-3 bg-white " :class="{removeMargin:props.removeMargin===true}">
+  <div class="row d-none d-md-block "><categoryTitle most="most" :data="name" :educationPage="props.educationPage"  /></div>
   <div class="row most-visited-container mb-3 mb-md-0 ">
-    <div class="header-mostVisitedCard d-flex justify-content-end"><router-link to="" class="all-school-news text-decoration-none">همه اطلاعیه ها ...</router-link></div>
-    <div class="header-mostVisitedCard-title d-md-none "><h3>پربازدید ترین ها</h3></div>
+    <div class="header-mostVisitedCard d-flex justify-content-end"><router-link to="" class="all-school-news text-decoration-none" :class="{educationPage:props.educationPage==true}">همه اطلاعیه ها ...</router-link></div>
+    <div class="header-mostVisitedCard-title d-md-none   " ><h3>پربازدید ترین ها</h3></div>
   </div>
   <div class="row overflow-hidden">
-    <most-visited-card :data="data" changeAuthorIcon="true" :showMostVisitedNews="props.showNews" />
+    <most-visited-card :data="data" changeAuthorIcon="true" :showMostVisitedNews="props.showNews" :theme="props.theme" />
   </div>
 </div>
 </template>
@@ -53,20 +53,20 @@ const data = ref([
 }
 /* end remove margin for news Page*/
 
-.container{
+.container-lg{
   border-radius: 11px;
   background-color: #FFFFFF;
 }
 
 .header-mostVisitedCard {
   position: absolute;
-  top: 17px;
-  left: 34px;
+  top: 15px;
+  left: 15px;
 }
 .header-mostVisitedCard a {
   font-weight: 400 ;
   font-size: 13.56px;
-  line-height:25.43px ;
+  line-height:1rem ;
   text-align: justify;
   color: #095195;
 }
@@ -92,7 +92,6 @@ const data = ref([
   .header-mostVisitedCard-title h3{
     font-weight: 700;
     font-size: 14.91px;
-    letter-spacing: -4.5%;
     color: #095195;
   }
 }
@@ -106,9 +105,14 @@ const data = ref([
   .header-mostVisitedCard-title h3{
     font-weight: 500;
     font-size: 14.91px;
-    letter-spacing: -4.5%;
     color: #095195;
     text-wrap: nowrap;
   }
 }
+@media (max-width: 992px) {
+  .educationPage{
+    font-size: 8.5px !important;
+  }
+}
+
 </style>

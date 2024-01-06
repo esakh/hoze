@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-lg">
     <header>
       <div class="breadCrumb">
         <bread-crumb :data="dataBreadCrumb"/>
@@ -7,7 +7,7 @@
       <education-banner :data="data"/>
     </header>
     <main class="row mt-5">
-      <article class="col-lg-8">
+      <article class=" col-md-7 col-lg-8">
         <div class="main-body bg-white  p-4">
           <div class="main-body-text" v-html="data.main.body"></div>
           <div class="main-body-info">
@@ -22,7 +22,7 @@
           </div>
         </div>
       </article>
-      <aside class="col-lg-4">
+      <aside class="col-md-5 col-lg-4">
         <div class="aside-most-visited mt-5 mt-lg-0 ">
           <most-visited :removeMargin="true"/>
         </div>
@@ -30,7 +30,7 @@
     </main>
     <footer>
       <div class="row">
-        <div class="form col-lg-8 my-5">
+        <div class="form col-md-7 col-lg-8 my-5">
           <div class="form-point-of-view">
             <form-point-of-view :data="data"/>
           </div>
@@ -146,24 +146,36 @@ ul.information li span.icon {
 
 @media (min-width: 1200.1px) {
   ul.information li {
-    width: 25% !important;
+    width: 25% ;
   }
 }
-
+@media (max-width: 991.9px) {
+  ul.information li {
+    width: 45% ;
+    margin: auto !important;
+  }
+}
 @media (max-width: 767.9px) {
   ul.information li {
-    width: 40%;
-    margin: auto !important;
+    width: 30% ;
   }
 
   .data-source-text {
     font-size: 11px;
   }
 }
+@media (max-width: 611px) {
+  ul.information li {
+    width: 38% ;
+  }
 
+  .data-source-text {
+    font-size: 11px;
+  }
+}
 @media (max-width: 480px ) {
   ul.information li {
-    width: 40%;
+    width: 35% ;
     height: 28px;
     margin: auto 8px !important;
   }
@@ -174,9 +186,17 @@ ul.information li span.icon {
   }
 
   .data-source-text {
-    font-size: 6px;
+    font-size: 6px ;
   }
 }
+@media (max-width: 360px) {
+  ul.information li {
+    width: 50% !important;
+  }
 
+  .data-source-text {
+    font-size: 5.5px !important;
+  }
+}
 
 </style>

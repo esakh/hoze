@@ -1,5 +1,5 @@
 <template>
-  <div class="container overflow-hidden">
+  <div class="container-lg overflow-hidden">
     <section class="header-banner my-5 mt-md-4 ">
       <bannerTop :data="socialCard"/>
     </section>
@@ -10,13 +10,16 @@
       <article class="col-lg-8">
         <lastNews/>
       </article>
-      <aside class="col-lg-4">
-        <section>
-          <SchoolNews/>
-        </section>
-        <section class="mt-4">
-          <mostVisited/>
-        </section>
+      <aside class=" col-lg-4 d-flex flex-row ">
+        <div class="row p-lg-0">
+
+          <section class="col-md-6 col-lg-12">
+            <SchoolNews :theme="true" />
+          </section>
+          <section class="mt-4 mt-lg-0 col-md-6 col-lg-12">
+            <mostVisited :theme="true" />
+          </section>
+        </div>
       </aside>
       <section class="row">
         <div class="col-12 peyvand-container  ">

@@ -2,7 +2,7 @@
 import {defineProps, onMounted,} from 'vue'
 import AuthorVisitDateAside from "@/components/home/aside/authorVisitDateAside.vue";
 
-const props = defineProps(['data', 'showMostVisitedNews'])
+const props = defineProps(['data', 'showMostVisitedNews','theme'])
 
 onMounted(() => {
   const boxes = document.querySelectorAll('.box')
@@ -29,7 +29,7 @@ onMounted(() => {
 <template>
   <div class="container">
     <div class="row">
-      <div class="card border-0 p-2 mb-1 mt-lg-1 mt-xl-2  mt-xxl-1 box " v-for="item in props.data" :key="item">
+      <div class="card  border-0 p-2 mb-1 mt-lg-1 mt-xl-2  mt-xxl-1 box " :class="{home:props.theme == true}" v-for="item in props.data" :key="item">
         <div class="card-header border-0 p-0 bg-white">
           <div class="category"><span class="badge w-100" :style="{background:item.color}">{{ item.category }}</span>
           </div>
@@ -102,7 +102,7 @@ p.card-text {
 
 .card {
   position: relative;
-  margin: 7px auto !important;
+  margin: 5.7px auto !important;
 }
 
 .card::after {
@@ -130,7 +130,7 @@ p.card-text {
 
 @media (max-width: 1199.9px) {
   .card {
-    margin: 1px auto !important;
+    margin: 2px auto !important;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 50%);
@@ -154,15 +154,25 @@ p.card-text {
   }
 }
 
+@media (min-width: 1400px) {
+  .card {
+   margin:6.5px auto !important;
+  }
+}
 @media (max-width: 1199px) {
   .card {
     padding: 2.3px 8px !important;
+    margin: 7px auto !important;
   }
+
 }
 
 @media (max-width: 991.9px) {
   .card {
     padding: 8px !important;
+  }
+  .home.card{
+    margin: 1.5px auto !important;
   }
 }
 

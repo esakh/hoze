@@ -9,7 +9,7 @@
           </figure>
         </div>
       </div>
-      <div class="content-news d-flex flex-column p-0 px-md-3   col-lg-8 col-md-9 ">
+      <div class="content-news d-flex flex-column p-0 px-md-3 pe-0  col-lg-8 col-md-9 ">
         <div class="card-body p-0">
           <div class="top-title-news d-none d-lg-block" :class="{remove: props.theme === true }">
             <span>{{ item.top_card_header }}</span>

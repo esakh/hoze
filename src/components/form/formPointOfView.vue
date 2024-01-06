@@ -7,7 +7,7 @@ const btn = ref(null)
 </script>
 
 <template>
-  <div class="container px-0 bg-white rounded-3">
+  <div class="container-lg px-0 bg-white rounded-3">
     <div class="row p-3">
       <form action="" @submit.prevent="handleSubmit">
         <div class="d-flex  justify-content-between mb-lg-3 input-resize">

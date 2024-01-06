@@ -11,14 +11,14 @@ const showMostVisitedNews = ref(false)
 const mostVisited = ref(null)
 
 const width = ref(window.innerWidth)
-if (window.innerWidth > 992) {
+if (window.innerWidth > 767.9) {
   document.onload = showMobileMode()
 }
 window.addEventListener('resize', () => {
   width.value = window.innerWidth
 })
 watch(width, () => {
-  if (width.value > 991.9) {
+  if (width.value > 767.9) {
     show.value = true
   } else {
     show.value = false
@@ -114,30 +114,30 @@ import categoryNews from '@/components/categoryNews/categoryNews.vue'
 </script>
 
 <template>
-  <div class="container ">
+  <div class="container-lg ">
     <div class="row">
       <bread-crumb :data="dataBreadCrumb"/>
     </div>
     <div class="row">
       <main>
-        <div class="row d-flex flex-column-reverse flex-lg-row ">
-          <article class="col-lg-8">
+        <div class="row d-flex flex-column-reverse flex-md-row ">
+          <article class="col-md-8">
             <div class="special-news p-4 rounded-4 ">
               <last-news-card :theme="theme" :data='data'/>
             </div>
           </article>
-          <aside class="col-lg-4">
+          <aside class="col-md-4">
             <div class="search-box mb-4">
               <search-box/>
             </div>
             <div class="category-news-container">
-              <button  class="btn category-news-btn w-100 d-lg-none mb-3"> دسته بندی اخبار</button>
-              <transition><category-news   class=" category-news " /></transition>
+              <button  class="btn category-news-btn w-100 d-md-none mb-3"> دسته بندی اخبار</button>
+              <transition> <categoryNews   class=" category-news " /></transition>
             </div>
 
             <div class="most-visited my-2 my-lg-0">
-              <button  @click="showMobileMode" class="btn  w-100 d-lg-none mb-3">پربازدید ترین ها</button>
-              <mostvisited :showNews="showMostVisitedNews " ref="mostVisited" v-if="show"/>
+              <button  @click="showMobileMode" class="btn  w-100 d-md-none mb-3">پربازدید ترین ها</button>
+              <mostvisited :showNews="showMostVisitedNews " :educationPage="true" ref="mostVisited" v-if="show"/>
 
             </div>
           </aside>
@@ -173,10 +173,10 @@ import categoryNews from '@/components/categoryNews/categoryNews.vue'
   display:none
 }
 
-@media (min-width:992px){
+@media (min-width:768px){
   .category-news {display:block}
 }
-@media (max-width:991.9px){
+@media (max-width:768px){
   .category-news.active{
     display: block !important; ;
   }

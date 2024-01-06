@@ -2,7 +2,7 @@
 <template>
 <div class="container">
   <div class="category">
-    <figure>
+    <figure :class="{educationPage:props.educationPage==true}">
       <img src="@/assets/icon/category/category.png" class="" alt="">
       <figcaption :class="{ changeTop: props.schoolNews === 'schoolNews'|| props.most === 'most' || props.category === 'category' }" >
         <span  :class="{ last: props.lastNews === 'lastNews' , school: props.schoolNews === 'schoolNews'  ,most: props.most === 'most' , categoryNews: props.category==='category'}" >{{ props.data }}</span>
@@ -13,7 +13,7 @@
 </template>
 <script setup>
 import {defineProps} from 'vue'
-const props = defineProps(['data' ,'most' , 'lastNews','schoolNews' , 'category'])
+const props = defineProps(['data' ,'most' , 'lastNews','schoolNews' , 'category' ,'educationPage'])
 </script>
 
 <style scoped>
@@ -66,4 +66,17 @@ figcaption.changeTop{
   line-height: 28px;
   color:#fff;
 }
+/* start style props */
+@media(max-width: 992px){
+  .educationPage img{
+    width: 100px;
+  }
+  .educationPage figcaption{
+    top:-1px;
+  }
+  .educationPage figcaption span{
+    font-size:10px;
+  }
+}
+
 </style>

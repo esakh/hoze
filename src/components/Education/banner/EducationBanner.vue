@@ -1,14 +1,14 @@
 
 
 <template>
-<div class="container">
+<div class="container-lg">
   <div class="row">
     <div class="card p-3">
       <div class="row  d-flex flex-row-reverse">
-        <div class="col-lg-5 card-header bg-transparent border-0 ">
+        <div class="col-md-5 card-header bg-transparent border-0 ">
           <img src="@/assets/icon/rahbari/rahbar.png" alt="rahbar">
         </div>
-        <div class="col-lg-7 d-flex flex-column align-items-start ">
+        <div class="col-md-7 d-flex flex-column align-items-start ">
           <div class="card-body pb-0">
 
             <div class="education-main ">
@@ -59,9 +59,15 @@ const props = defineProps(['data'])
   width: 100%;
   height: 299px;
 }
+
+@media screen and (max-width: 991.9px){
+.card-title{
+  font-size: 20px;
+}
+}
 @media screen and (max-width: 768px){
+
   .card-title{
     font-size: 14px;
-  }
-}
+  }}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-0">
+  <div class="container-lg p-0">
     <div class=" comment-container rounded rounded-3 bg-white p-4 ">
       <div class=" row card d-flex flex-row border-0 question ">
         <div class="card-header bg-transparent border-0 col-3 col-sm-2   ">

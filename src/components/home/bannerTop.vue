@@ -1,12 +1,12 @@
 <template>
-  <div class="container ">
+  <div class="container-lg ">
     <div class="row d-grid  ">
       <div class="grid-lg-6 grid p-0 banner-right overflow-hidden">
         <router-link to="" class="card overflow-hidden">
           <img src="@/assets/icon/crownFlower/crownFlower.png" class="crown-top" alt="">
           <img src="@/assets/icon/banner/banner-one.png" alt="" class="img-banner">
           <div class="card-body ">
-            <div class="badge badge-pill"><span>{{items[0].category}}</span></div>
+            <div class="badge badge-pill rounded-pill"><span>{{items[0].category}}</span></div>
             <div class="text-title"><h1>{{items[0].title}}</h1></div>
             <div class="text-body"><p>{{items[0].body}}</p></div>
           </div>
@@ -16,7 +16,7 @@
         <router-link to="" class="card overflow-hidden">
           <img src="@/assets/icon/banner/banner-two.png" class="img-banner" alt="">
           <div class="card-body ">
-            <div class="badge badge-pill "><span>{{items[1].category}}</span></div>
+            <div class="badge badge-pill rounded-pill"><span>{{items[1].category}}</span></div>
             <div class="text-title"><h1>{{items[1].title}}</h1></div>
             <div class="text-body"><p>{{items[1].body}}</p></div>
           </div>
@@ -24,7 +24,7 @@
         <router-link to="" class="card overflow-hidden">
           <img src="@/assets/icon/banner/banner-three.png" class="img-banner" alt="">
           <div class="card-body ">
-            <div class="badge badge-pill"><span>{{items[2].category}}</span></div>
+            <div class="badge badge-pill rounded-pill"><span>{{items[2].category}}</span></div>
             <div class="text-title"><h1>{{items[2].title}}</h1></div>
             <div class="text-body"><p>{{items[2].body}}</p></div>
           </div>
@@ -71,7 +71,7 @@ const items = [
 <style scoped>
 .d-grid {
   grid-template-columns:repeat(2, 1fr);
-  gap: 30px;
+  gap: 15px;
 }
 *{
   color: #FFFFFF;
@@ -112,7 +112,7 @@ const items = [
 }
 .banner-left{
   display: grid;
-  gap: 30px ;
+  gap: 15px ;
 }
 .text-title h1{
   font-size: 20px;
@@ -124,7 +124,7 @@ const items = [
   font-size: 12px;
   font-weight: 400;
   background-color: fuchsia;
-  padding: 0.2rem 0.5rem;
+  padding: 0.4rem 0.8rem;
   margin-bottom: 0.85rem;
 
 }
@@ -150,7 +150,19 @@ const items = [
   background:linear-gradient(rgba(255, 255, 255, 0.1) 30%,rgba(0,0,0,0.7));
   border-radius: inherit;
 }
-@media (max-width: 992px) {
+
+@media screen and (max-width: 991.9px) {
+  .text-body p{
+    font-size: 11px;
+    line-height: 1.2rem;
+  }
+  .text-title h1{
+    font-size: 14px;
+    margin-bottom: 0.4rem;
+  }
+
+}
+@media (max-width: 767.9px) {
     .d-grid{
       //grid-template-rows:repeat(1, 1fr) !important;
       grid-template-columns:repeat(1, 1fr);

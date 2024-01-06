@@ -41,7 +41,7 @@ const categoryItems = ref([
 </script>
 
 <template>
-  <div class="container bg-white position-relative mb-3 mb-lg-4">
+  <div class="container-lg bg-white position-relative mb-4 mb-lg-4">
     <div class="row category-title d-none d-lg-block">
       <category-title :data="categoryName" category="category" />
     </div>
@@ -60,7 +60,7 @@ const categoryItems = ref([
 </template>
 
 <style scoped>
-.container {
+.container-lg {
   border-radius: 11px;
 
 }
@@ -86,5 +86,12 @@ const categoryItems = ref([
 
 @media screen and (max-width:991.9px ) {
  .category{ margin: 1rem 0 !important;}
+  .category-text{
+    font-size: 0.5rem;
+  }
+  .category-number{
+    font-size: 0.7rem;
+    margin-right: 0.2rem;
+  }
 }
 </style>

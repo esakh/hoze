@@ -82,14 +82,13 @@
   <style scoped>
   .icon svg{
       height: 12px;
-      width: 13.94;
+      width: 13.94px;
   }
 
     .date-news {
       font-weight: 400;
       font-size: 8.5px;
       line-height: 17px;
-      letter-spacing: -4.5%;
       text-align: justify;
       color: #000000;
     }
@@ -98,7 +97,6 @@
       font-weight: 400;
       font-size: 8.5px;
       line-height: 17px;
-      letter-spacing: -4.5%;
       text-align: justify;
       color: #000000;
     }
@@ -107,7 +105,6 @@
       font-weight: 400;
       font-size: 8.5px;
       line-height: 17.93px;
-      letter-spacing: -4.5%;
       text-align: justify;
       color: #000000;
     }
@@ -120,5 +117,35 @@
       .removeAuthor{
         display: none !important;
       }
+    }
+  @media(max-width: 1199.99px){
+    .icon svg{
+      height: 12px;
+      width: 13.94px;
+    }
+
+    .date-news {
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 17px;
+      text-align: justify;
+      color: #000000;
+    }
+
+    .lastvisited-news {
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 17px;
+      text-align: justify;
+      color: #000000;
+    }
+
+    .author-news {
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 17.93px;
+      text-align: justify;
+      color: #000000;
+    }
     }
   </style>

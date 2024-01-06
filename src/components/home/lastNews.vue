@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-white  pt-4 pt-md-4 pt-lg-4  px-3 position-relative">
+  <div class="container-lg bg-white  pt-4 pt-md-4 pt-lg-4  px-3 position-relative">
     <div class="category-title d-none d-md-block">
       <categoryTitle :data="category" lastNews="lastNews"/>
     </div>
@@ -63,14 +63,13 @@ const category = ref('آخرین اخبار ')
 </script>
 
 <style scoped>
-.container{
+.container-lg{
   border-radius: 8px;
 }
 a{
   font-weight: 400;
   font-size: 13.56px;
-  //line-height: 25.43;
-  //letter-spacing: -3.5px;
+  line-height: 0.3rem;
   text-align: justify;
 }
 .all-news-title{
@@ -87,7 +86,6 @@ a{
     background-color: transparent !important;
   }
   .last-news-title h3{
-    letter-spacing: -4.5%;
     font-size: 14.91px;
     font-weight: 700;
     color: #095195 ;

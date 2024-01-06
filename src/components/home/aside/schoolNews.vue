@@ -1,9 +1,10 @@
 <script setup>
-import {onMounted, ref , provide} from 'vue'
+import {onMounted, ref , provide ,defineProps} from 'vue'
 import schoolNewsCard from "@/components/home/aside/schoolNewsCard.vue";
 import CategoryTitle from "@/components/home/categoryTitle.vue";
 const schoolContainer = ref(null)
 const removeDate = ref(false)
+const props = defineProps(['theme'])
 onMounted(()=>{
 window.addEventListener('resize' , ()=>{
   if(window.innerWidth < 767.9){
@@ -55,7 +56,7 @@ const data = ref([
 </script>
 
 <template>
-<div ref="schoolContainer" class="container  pt-4  pt-md-5 pb-0 mt-4 mt-lg-0 bg-white position-relative">
+<div ref="schoolContainer" class="container-lg  pt-4  pt-md-5 pb-0 mt-4 mt-lg-0 bg-white position-relative">
   <div class="row d-none d-md-block">
     <categoryTitle schoolNews="schoolNews" :data="name" />
   </div>
@@ -65,7 +66,7 @@ const data = ref([
   </div>
 <div class="row">
   <div class="news-scholl-it overflow-hidden">
-    <schoolNewsCard :data="data" />
+    <schoolNewsCard :data="data" :theme="props.theme" />
   </div>
   <div class="news-scholl-it"></div>
 </div>
@@ -73,20 +74,19 @@ const data = ref([
 </template>
 
 <style scoped>
-.container{
+.container-lg{
   border-radius:11px ;
 }
 .header-schoolNewsCard{
   position: absolute;
-top: 24px;
-left: 24px;
+top: 15px;
+left: 15px;
 }
 .header-schoolNewsCard a{
 
   font-weight: 400 ;
   font-size: 13.56px;
-//line-height: 25.43;
-  letter-spacing: -3.5%;
+  line-height: 1rem;
   text-align: justify;
   color: #095195 ;
 }
@@ -108,7 +108,6 @@ left: 24px;
   color: #095195;
   font-weight: 700;
   font-size: 14.91px;
-  letter-spacing: -4.5%;
 }
 }
 @media(max-width: 767.9px){

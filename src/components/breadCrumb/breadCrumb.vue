@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-lg">
       <div class="row">
         <nav >
           <ol class="px-0 nav mb-4 "  >

@@ -137,11 +137,11 @@ const dataBreadCrumb = ref({
     line-height: 27.821px;
     text-align: right;
   }
-  contact-us-title {
+  .contact-us-title {
     font-family: IranianSans;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 27.821px;
+    font-size: 16px !important;
+    line-height: 20.821px;
     text-align: justify;
     color: #095195;
     letter-spacing: -1px;

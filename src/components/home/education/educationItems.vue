@@ -10,7 +10,7 @@ const props = defineProps(['educations'])
 </script>
 
 <template>
-  <div class=" container ">
+  <div class=" container-lg ">
     <div class="row">
       <swiper
           :slides-per-view="1"
@@ -28,7 +28,11 @@ const props = defineProps(['educations'])
           spaceBetween:30,
           slidesPerView:3
         },
-               '768.1':{
+        '850':{
+          spaceBetween:30,
+          slidesPerView:3
+        },
+        '567.9':{
           spaceBetween:30,
           slidesPerView:2
         }

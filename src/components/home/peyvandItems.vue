@@ -11,7 +11,7 @@ import 'swiper/css';
 
 <template>
 
-  <div class="container mt-5">
+  <div class="container-lg mt-5 ">
     <div class="row ">
       <swiper
           :autoplay="{
@@ -22,7 +22,7 @@ import 'swiper/css';
           :spaceBetween="30"
           :pagination="{
       clickable: true,
-    }"
+   }"
 
           :modules="[Controller , Autoplay ]"
           :controller="{ control: controlledSwiper }"

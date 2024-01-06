@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-white p-3">
+  <div class="container-lg bg-white p-3 ">
     <div class="row special-news px-1">
       <div class="special-news-title mb-3">
         <h3 class="last-news">  اخبار ویژه </h3>
@@ -45,24 +45,22 @@
             </div>
           </div>
         </swiper-slide>
+<!--        <div class="swiper-button-prev" @click="swipe.slideNext()" >ذفد </div>-->
+<!--        <div class="swiper-button-next"  ></div>-->
       </swiper>
     </div>
   </div>
 </template>
 
 <script setup>
-// import { useSwiperSlide } from 'swiper/vue'
-// import { useSwiper } from 'swiper/vue';
-// const swiper = useSwiper()
-// const swiperSlide = useSwiperSlide()
+
 
 import {ref} from "vue";
 import {Swiper, SwiperSlide} from 'swiper/vue'
-import {Autoplay, Navigation} from "swiper/modules";
+import {Autoplay, Navigation } from "swiper/modules";
 import 'swiper/css'
 import 'swiper/css/pagination'
 import "@/assets/style/swiperSpecialNews.css";
-
 const items = ref([
   {
     time: ' 24 شهریور 1402 ',
@@ -95,10 +93,9 @@ const items = ref([
 <style scoped>
 @import "@/assets/style/swiperSpecialNews.css";
 
-.container {
-  //border-radius: 16px;
+.container-lg {
   border-radius: 3px;
-  border-top: 3px solid rgba(27, 164, 170, 0.18);
+  border-top: 3px solid rgba(27, 164, 170, 0.18) !important;
 }
 
 h3 {
@@ -130,7 +127,6 @@ h3 {
 p {
   font-size: 10px;
   font-weight: 400;
-  letter-spacing: -4.5%;
   line-height: 20px;
   text-align: justify;
   display: -webkit-box;

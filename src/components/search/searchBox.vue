@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="container bg-white p-3 rounded-3">
+  <div class="container-lg bg-white p-3 rounded-3">
     <div class="row">
       <form action="">
         <div class="input-group">

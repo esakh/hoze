@@ -7,7 +7,7 @@ const props = defineProps(['educations'])
 </script>
 
 <template>
-  <div class="conatainer mb-lg-5">
+  <div class="container-lg mb-lg-5">
     <div class="row">
       <div class="education mb-5">
         <div class="education-content position-relative d-flex flex-column align-items-center mx-auto">
